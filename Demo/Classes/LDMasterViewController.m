@@ -32,6 +32,8 @@
     [super viewDidLoad];
     UIBarButtonItem * transitionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pickTransform:)];
     self.navigationItem.rightBarButtonItem = transitionButton;
+    ADLivelyTableView * livelyTableView = (ADLivelyTableView *)self.tableView;
+    livelyTableView.initialCellTransformBlock = ADLivelyTransformFan;
     [transitionButton release];
 }
 
