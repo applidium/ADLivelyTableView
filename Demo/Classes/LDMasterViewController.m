@@ -55,6 +55,11 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     ADLivelyTableView * livelyTableView = (ADLivelyTableView *)self.tableView;
     NSArray * transforms = [NSArray arrayWithObjects:ADLivelyTransformFan, ADLivelyTransformCurl, ADLivelyTransformFade, ADLivelyTransformHelix, ADLivelyTransformWave, nil];
+	
+	if ( (buttonIndex+1) > [transforms count]) {
+		return;
+	}
+	
     livelyTableView.initialCellTransformBlock = [transforms objectAtIndex:buttonIndex];
 }
 
